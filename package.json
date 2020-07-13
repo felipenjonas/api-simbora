@@ -2,7 +2,10 @@
   "name": "api-simbora",
   "version": "1.0.0",
   "main": "server.js",
-  "repository": "https://github.com/felipenjonas/api-simbora.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipenjonas/api-simbora.git"
+  },
   "author": "felipenjonas@gmail.com",
   "license": "MIT",
   "scripts": {
@@ -20,6 +23,12 @@
   },
   "engines": {
     "yarn": "1.19.1",
-    "node":"12.13.0"
-  }
+    "node": "12.13.0"
+  },
+  "description": "Rest-API feita com Node.js usando banco de dados SQLite;\r Esta API será consumida por um web scraping em python para que seja inserido os dados no banco de dados, após isso, consumir os dados em uma aplicação web",
+  "bugs": {
+    "url": "https://github.com/felipenjonas/api-simbora/issues"
+  },
+  "homepage": "https://github.com/felipenjonas/api-simbora#readme",
+  "devDependencies": {}
 }
