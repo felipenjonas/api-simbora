@@ -1,12 +1,13 @@
 {
   "name": "api-simbora",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "https://github.com/felipenjonas/api-simbora.git",
   "author": "felipenjonas@gmail.com",
   "license": "MIT",
   "scripts": {
-    "start": " node ."
+    "dev": "nodemon server.js",
+    "start": " node server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
