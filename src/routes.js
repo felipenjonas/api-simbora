@@ -17,7 +17,7 @@ app.use((error, req, res, next) => {
 
 /*====Attractions ROUTES==== */
 route.get('/attractions', attractions_controller.get_all);
-route.post('/attraction/insert_new', attractions_controller.create);
+route.post('/attractions/insert_new', attractions_controller.create);
 
 
 
