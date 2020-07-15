@@ -23,7 +23,7 @@ prod_url = [Deploy_url](https://api-simbora.herokuapp.com/)
 - Attractions:
 
 > - prod_url/attractions ||__GET__|| - Return All attractions
-> - prod_url/attraction/insert_new - ||__POST__|| Return ID Attraction created
+> - prod_url/attractions/insert_new - ||__POST__|| Return ID Attraction created
 
 - Data to attractions [__req.body__]:
 > {
