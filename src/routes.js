@@ -16,9 +16,10 @@ app.use((error, req, res, next) => {
 });
 
 /*====Attractions ROUTES==== */
-route.get('/attractions', attractions_controller.get_all);
-route.get('/attractions/by_category', attractions_controller.selectByCategory);
-route.post('/attractions/insert_new', attractions_controller.create);
+route.get('/attractions',attractions_controller.get_all);
+route.get('/attractions/:category',attractions_controller.selectByCategory);
+route.post('/attractions/insert_new',attractions_controller.create);
+route.delete('/attractions/delete/:id',attractions_controller.deleteById);
 
 
 

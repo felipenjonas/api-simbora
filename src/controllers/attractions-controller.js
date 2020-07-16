@@ -1,5 +1,6 @@
 const connection = require('../database/connection');
 
+
 module.exports = {
     async get_all(req, res, next) {
         try {
@@ -45,6 +46,8 @@ module.exports = {
                 source_url
             });
 
+            
+
             return res.json(create_attraction)
 
 
@@ -55,19 +58,38 @@ module.exports = {
     async selectByCategory(req, res, next) {
         try {
 
-            const { category } = req.body;
+            const { category } = req.params;
 
-           const category = await connection('attractions')
-            .select()    
-            .where({ "category": category });
+           const select_category = await connection('attractions')
+            .from('attractions')
+            .select('*')   
+            .where('category',category);
+            
+            if (select_category==false) {
+                return res.send("Categoria não existe").status(404)  
+            }
 
-            console.log(`attraction on type category:${category} was listed`);
-
-            return res.send(category);
+            console.log(`attraction on type category:|${category}| - listed`);
+    
+            return res.send(select_category);
+            
 
         } catch (error) {
 
             next(error);
+        }
+    },
+    async deleteById(req, res, next) {
+        try {
+            const {id}= req.params;
+
+            const attraction = await connection('attractions').where('id', id).delete();
+            
+            console.log(`attraction with ID: ${id}: Deleted from database`);
+            return res.status(204).send();
+
+        } catch (error) {
+            next(error)
         }
     }
 
