@@ -54,11 +54,12 @@ module.exports = {
     }, 
     async selectByCategory(req, res, next) {
         try {
-            const { category } = req.params;
+
+            const { category } = req.body;
 
            const category = await connection('attractions')
             .select()    
-            .where({ category });
+            .where({ "category": category });
 
             console.log(`attraction on type category:${category} was listed`);
 
