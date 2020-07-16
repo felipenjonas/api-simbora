@@ -51,8 +51,24 @@ module.exports = {
         } catch (error) {
             next(error)
         }
-    }
+    }, 
+    async selectByCategory(req, res, next) {
+        try {
+            const { category } = req.params;
 
+           const category = await connection('attractions')
+            .select()    
+            .where({ category });
+
+            console.log(`attraction on type category:${category} was listed`);
+
+            return res.send(category);
+
+        } catch (error) {
+
+            next(error);
+        }
+    }
 
 
 }
