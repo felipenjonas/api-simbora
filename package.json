@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "ENV_SILENT=true node server.js",
-    "postinstall": "ENV_SILENT=true knex migrate:latest"
+    "postinstall": "ENV_SILENT=true knex migrate:latest --force"
   },
   "dependencies": {
     "cors": "^2.8.5",
