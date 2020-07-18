@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "ENV_SILENT=true node server.js",
-    "postinstall": "yarn knex migrate:latest --env production"
+    "postinstall": "ENV_SILENT=true yarn knex migrate:latest --env production --force"
   },
   "dependencies": {
     "cors": "^2.8.5",
