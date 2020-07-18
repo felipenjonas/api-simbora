@@ -12,7 +12,7 @@
     "dev": "nodemon server.js",
     "start": "ENV_SILENT=true node server.js",
     "build": "node",
-    "postinstall": "ENV_SILENT=true npx knex migrate:latest --force"
+    "postinstall": "ENV_SILENT=true knex migrate:latest"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
