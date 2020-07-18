@@ -10,8 +10,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "ENV_SILENT=true node server.js",
-    "postinstall": "heroku run knex migrate:latest"
+    "start": "ENV_SILENT=true node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
