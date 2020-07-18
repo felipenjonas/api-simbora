@@ -1,5 +1,5 @@
 # API
-Rest-API feita com Node.js usando banco de dados SQLite;
+Rest-API feita com Node.js usando banco de dados SQLite no desenvolvimento e PostgresQL em produção;;
 Esta API será consumida por um web scraping em python para que seja inserido os dados no banco de dados, após isso, consumir os dados em uma aplicação web
 
 
@@ -10,12 +10,13 @@ Esta API será consumida por um web scraping em python para que seja inserido os
 - [ ] Criar modelos (migrations) Usando Knex.js (Query builder)
 - [ ] Criar controllers para inserção (POST) e recuperação (Get) dos dados
 - [ ] Criar endpoints.
-- [ ] Fazer deploy da aplicação
+- [ ] Fazer deploy da aplicação;
+- [ ] Configurar o banco de dados em produção;
 - [ ] Verificar o banco de dados hospedado;
 
 ## Doc API: EndPoints
 
-prod_url = [Deploy_url](https://api-simbora.herokuapp.com/)
+prod_url = [Deploy_url](https://api-mvp-simbora.herokuapp.com/)
 
 - HOME: Not Found 404
 
