@@ -33,6 +33,8 @@ module.exports = {
   production: {
     client: process.env.DB_PRODUCTION_CLIENT,
     connection: {
+      host: process.env.DB_PRODUCTION_HOST,
+      port: process.env.DB_PRODUCTION_PORT,
       database: process.env.DB_PRODUCTION_DATABASE,
       user: process.env.DB_PRODUCTION_USER,
       password: process.env.DB_PRODUCTION_PASS
@@ -42,6 +44,7 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: './db/migrations',
       tableName: process.env.DB_PRODUCTION_MIGRATION_TABLE
     }
   }
