@@ -1,49 +1,54 @@
 // Update with your config settings.
-
+require("dotenv").config();
 const path = require('path');
 
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: process.env.DB_DEVELOPMENT_CLIENT,
     connection: {
-      filename: './src/database/db.sqlite'
+      filename: process.env.DB_DEVELOPMENT_FILE
     },
     migrations: {
-      directory: path.join(__dirname, './src/database/migrations')
-    },useNullAsDefault: true
+      directory: process.env.DB_DEVELOPMENT_MIGRATION
+    },
+    useNullAsDefault: true
   },
 
   staging: {
-    client: 'postgresql',
+    client: process.env.DB_STAGING_CLIENT,
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: process.env.DB_STAGING_HOST,
+      port: process.env.DB_STAGING_PORT,
+      database: process.env.DB_STAGING_DATABASE,
+      user: process.env.DB_STAGING_USER,
+      password: process.env.DB_STAGING_PASS
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: process.env.DB_STAGING_MIGRATION_DIRECTORY,
+      tableName: process.env.DB_STAGING_MIGRATION_TABLE
     }
   },
 
   production: {
-    client: 'postgresql',
+    client: process.env.DB_PRODUCTION_CLIENT,
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      host: process.env.DB_PRODUCTION_HOST,
+      port: process.env.DB_PRODUCTION_PORT,
+      database: process.env.DB_PRODUCTION_DATABASE,
+      user: process.env.DB_PRODUCTION_USER,
+      password: process.env.DB_PRODUCTION_PASS
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: process.env.DB_PRODUCTION_MIGRATION_DIRECTORY,
+      tableName: process.env.DB_PRODUCTION_MIGRATION_TABLE
     }
   }
-
 };

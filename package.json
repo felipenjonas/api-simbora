@@ -10,24 +10,24 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": " node server.js",
-    "build": "node"
+    "start": "ENV_SILENT=true node server.js",
+    "postinstall": "ENV_SILENT=true npx knex migrate:latest --env production"
   },
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.21.2",
     "morgan": "^1.10.0",
+    "pg": "^8.3.0",
     "sqlite3": "^5.0.0"
-  },
-  "engines": {
-    "yarn": "1.19.1",
-    "node": "12.13.0"
   },
   "description": "Rest-API feita com Node.js usando banco de dados SQLite;\r Esta API será consumida por um web scraping em python para que seja inserido os dados no banco de dados, após isso, consumir os dados em uma aplicação web",
   "bugs": {
     "url": "https://github.com/felipenjonas/api-simbora/issues"
   },
   "homepage": "https://github.com/felipenjonas/api-simbora#readme",
-  "devDependencies": {"nodemon": "^2.0.4"}
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
