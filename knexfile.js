@@ -44,7 +44,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: './db/migrations',
+      directory: './src/database/migrations',
       tableName: process.env.DB_PRODUCTION_MIGRATION_TABLE
     }
   }
