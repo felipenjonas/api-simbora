@@ -42,3 +42,14 @@ prod_url = [Deploy_url](https://api-simbora.herokuapp.com/)
     "source_url":"teste"
 >}  
 
+## Configure Heroku
+
+```bash
+  heroku config:set -a <YOUR-APP-NAME> \
+    DB_PRODUCTION_CLIENT=<YOUR-APP-DB-DRIVER> \
+    DB_PRODUCTION_HOST=<YOUR-APP-DB-HOST> \
+    DB_PRODUCTION_DATABASE=<YOUR-APP-DB-NAME> \
+    DB_PRODUCTION_USER=<YOUR-APP-DB-USER> \
+    DB_PRODUCTION_PASS=<YOUR-APP-DB-PASSWORD> \
+    DB_PRODUCTION_MIGRATION_TABLE=<YOUR-APP-DB-MIGRATION-TABLE>
+```
