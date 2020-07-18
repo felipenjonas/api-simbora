@@ -1,30 +1,17 @@
-const express = require('express');
-const app = express();
-const route = express.Router();
+const express = require("express");
 
-const attractions_controller = require('./controllers/attractions-controller');
+const AttractionsController = require('./controllers/AttractionsController');
 
-app.use((req, res, next) => {
-    const erro = new Error('Não encontrado');
-    erro.status = 404;
-    next(erro);
-});
+const routes = express.Router();
 
-app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    return res.send({erro: {mensagem: error.message}})
+routes.get("/", (request, response) => {
+    return response.json({ message: "Server up" });
 });
 
 /*====Attractions ROUTES==== */
-route.get('/attractions',attractions_controller.get_all);
-route.get('/attractions/:category',attractions_controller.selectByCategory);
-route.post('/attractions/insert_new',attractions_controller.create);
-route.delete('/attractions/delete/:id',attractions_controller.deleteById);
+routes.get('/attractions', AttractionsController.get_all);
+routes.get('/attractions/:category', AttractionsController.selectByCategory);
+routes.post('/attractions/insert_new', AttractionsController.create);
+routes.delete('/attractions/delete/:id', AttractionsController.deleteById);
 
-
-
-
-
-
-
-module.exports = route;
+module.exports = routes;

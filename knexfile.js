@@ -17,6 +17,8 @@ module.exports = {
   staging: {
     client: process.env.DB_STAGING_CLIENT,
     connection: {
+      host: process.env.DB_STAGING_HOST,
+      port: process.env.DB_STAGING_PORT,
       database: process.env.DB_STAGING_DATABASE,
       user: process.env.DB_STAGING_USER,
       password: process.env.DB_STAGING_PASS
@@ -26,6 +28,7 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: process.env.DB_STAGING_MIGRATION_DIRECTORY,
       tableName: process.env.DB_STAGING_MIGRATION_TABLE
     }
   },
@@ -44,7 +47,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      directory: './src/database/migrations',
+      directory: process.env.DB_PRODUCTION_MIGRATION_DIRECTORY,
       tableName: process.env.DB_PRODUCTION_MIGRATION_TABLE
     }
   }
